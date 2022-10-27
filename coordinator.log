@@ -1,0 +1,89 @@
+2022-10-26 17:54:50,145 [INFO][cluster:709]: Launching etcd ...
+2022-10-26 17:54:51,172 [INFO][cluster:874]: Etcd created, endpoint is 10.102.201.100:2379
+2022-10-26 17:54:51,172 [INFO][cluster:895]: Creating interactive engine service...
+2022-10-26 17:54:51,172 [INFO][cluster:902]: Creating engine replicaset...
+2022-10-26 17:54:51,172 [INFO][cluster:546]: Launching GraphScope engines pod ...
+2022-10-26 17:54:51,363 [INFO][cluster:955]: [gs-engine-oijgfv-jtftn]: Successfully assigned gs-afbkco/gs-engine-oijgfv-jtftn to docker-desktop
+2022-10-26 17:54:51,827 [INFO][cluster:955]: [gs-engine-oijgfv-jtftn]: Container image "registry.cn-hongkong.aliyuncs.com/graphscope/graphscope:0.17.0" already present on machine
+2022-10-26 17:54:51,851 [INFO][cluster:955]: [gs-engine-oijgfv-jtftn]: Created container engine
+2022-10-26 17:54:51,934 [INFO][cluster:955]: [gs-engine-oijgfv-jtftn]: Started container engine
+2022-10-26 17:54:51,965 [INFO][cluster:955]: [gs-engine-oijgfv-jtftn]: Created container vineyard
+2022-10-26 17:54:52,046 [INFO][cluster:955]: [gs-engine-oijgfv-jtftn]: Started container vineyard
+2022-10-26 17:55:01,599 [INFO][cluster:955]: [gs-engine-oijgfv-jtftn]: Readiness probe failed: 
+2022-10-26 17:55:10,014 [INFO][cluster:993]: GraphScope engines pod is ready.
+2022-10-26 17:55:10,015 [INFO][cluster:1140]: Engines pod name list: ['gs-engine-oijgfv-jtftn']
+2022-10-26 17:55:10,015 [INFO][cluster:1141]: Engines pod ip list: ['10.1.2.94']
+2022-10-26 17:55:10,015 [INFO][cluster:1142]: Engines pod host ip list: ['172.17.0.4']
+2022-10-26 17:55:10,016 [INFO][cluster:1143]: Vineyard service endpoint: localhost:9600
+2022-10-26 17:55:10,016 [INFO][cluster:1017]: Starting GAE rpc service on 10.1.2.94:56889 ...
+2022-10-26 17:55:10,266 [INFO][cluster:1063]: Analytical engine launching command: /home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/openmpi/bin/mpirun --allow-run-as-root -n 1 -host gs-engine-oijgfv-jtftn:1.0 /home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/grape_engine --host 0.0.0.0 --port 56889 --vineyard_shared_mem 4Gi -v 1 --vineyard_socket /tmp/vineyard_workspace/vineyard.sock
+2022-10-26 17:55:10,275 [INFO][coordinator:200]: Java initial class path set to: /home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/lib/grape-runtime-0.17.0-shaded.jar
+2022-10-26 17:55:10,279 [INFO][coordinator:1782]: Coordinator server listen at 0.0.0.0:59793
+10.1.2.94 gs-engine-oijgfv-jtftn
+I1026 17:55:11.000000    66 /work/analytical_engine/core/grape_instance.cc:87] Workers of grape-engine initialized.
+I1026 17:55:11.000000    69 /work/analytical_engine/core/server/analytical_server.cc:43] Analytical server is listening on 0.0.0.0:56889
+I1026 17:57:20.000000    70 /work/analytical_engine/core/grape_instance.cc:1206] Registering Graph, graph type: ARROW_PROPERTY, Type sigature: e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521, lib path: /home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so
+I1026 17:57:20.000000    70 /work/analytical_engine/core/grape_instance.cc:144] Loading graph, graph name: graph_bzayy4cB, graph type: ArrowFragment, type sig: e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521
+Loading empty graph: 100%|██████████| 10/10 [00:00<00:00, 245.02it/s]
+/tmp/arrow-apache-arrow-7.0.0/cpp/src/arrow/result.cc:28: ValueOrDie called on an error: NotImplemented: Got HDFS URI but Arrow compiled without HDFS support
+Loading vertex labeled field_of_study and:   0%|          | 0/10 [00:00<?, ?it/s]/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/../../gs_engine.libs/libarrow-821e3d1e.so.700.0.0(+0x6dc2e7)[0x7f3398e662e7]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/../../gs_engine.libs/libarrow-821e3d1e.so.700.0.0(_ZN5arrow4util8ArrowLogD1Ev+0xec)[0x7f3398e663ec]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/../../gs_engine.libs/libarrow-821e3d1e.so.700.0.0(_ZN5arrow8internal17InvalidValueOrDieERKNS_6StatusE+0xf1)[0x7f3398d0ad31]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/../../gs_engine.libs/libvineyard_io-ab48ec77.so(_ZN8vineyard14LocalIOAdaptorC1ERKSs+0xffc)[0x7f339a6508bc]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/../../gs_engine.libs/libvineyard_io-ab48ec77.so(_ZN8vineyard14LocalIOAdaptor4MakeERKSsPNS_6ClientE+0x90)[0x7f339a650b10]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/../../gs_engine.libs/libvineyard_io-ab48ec77.so(_ZN8vineyard9IOFactory15CreateIOAdaptorERKSsPNS_6ClientE+0x488)[0x7f339a6481b8]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so(+0xea1a1)[0x7f338c5211a1]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so(_ZZN2gs19ArrowFragmentLoaderIlmE16loadVertexTablesERKSt6vectorISt10shared_ptrINS_6detail6VertexEESaIS6_EEiiENKUlvE1_clEv+0x33b)[0x7f338c62ff6b]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so(_ZZN8vineyard13sync_gs_errorIRZN2gs19ArrowFragmentLoaderIlmE16loadVertexTablesERKSt6vectorISt10shared_ptrINS1_6detail6VertexEESaIS8_EEiiEUlvE1_JEEENSt9result_ofIFNSt5decayIT_E4typeEDpNSG_IT0_E4typeEEE4typeERKN5grape8CommSpecEOSH_DpOSK_ENKUlvE0_clEv+0x24)[0x7f338c630634]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so(_ZN2gs19ArrowFragmentLoaderIlmE16loadVertexTablesERKSt6vectorISt10shared_ptrINS_6detail6VertexEESaIS6_EEii+0x84a)[0x7f338c63112a]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so(_ZZN8vineyard13sync_gs_errorIRZN2gs19ArrowFragmentLoaderIlmE16LoadVertexTablesEvEUlvE0_JEEENSt9result_ofIFNSt5decayIT_E4typeEDpNS7_IT0_E4typeEEE4typeERKN5grape8CommSpecEOS8_DpOSB_ENKUlvE0_clEv+0x33)[0x7f338c6332d3]
+*** Aborted at 1666778273 (unix time) try "date -d @1666778273" if you are using GNU date ***
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so(_ZN2gs19ArrowFragmentLoaderIlmE16LoadVertexTablesEv+0x381)[0x7f338c633991]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so(_ZN2gs19ArrowFragmentLoaderIlmE20LoadVertexEdgeTablesEv+0x2a9)[0x7f338c634e49]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so(_ZN2gs19ArrowFragmentLoaderIlmE11addVerticesEm+0x4b)[0x7f338c6747cb]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so(_ZN2gs19ArrowFragmentLoaderIlmE31AddLabelsToGraphAsFragmentGroupEm+0x84)[0x7f338c675814]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.so(AddLabelsToGraph+0x270)[0x7f338c525680]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/grape_engine(_ZN2gs13GrapeInstance16addLabelsToGraphERKNS_3rpc8GSParamsE+0x6e6)[0x47d616]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/grape_engine(_ZN2gs13GrapeInstance9OnReceiveESt10shared_ptrINS_13CommandDetailEE+0x691)[0x491d21]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/grape_engine(_ZN2gs10Dispatcher10processCmdESt10shared_ptrINS_13CommandDetailEE+0xcf)[0x519d4f]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/grape_engine(_ZN2gs10Dispatcher13publisherLoopEv+0x1c6)[0x51bea6]
+/home/graphscope/.local/lib/python3.8/site-packages/graphscope.runtime/bin/../../gs_engine.libs/libvineyard_graph-b74e04ee.so(+0xbeddf)[0x7f33a43aeddf]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x8608)[0x7f3399ede608]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x42)[0x7f339813f132]
+PC: @                0x0 (unknown)
+*** SIGABRT (@0x3e900000042) received by PID 66 (TID 0x7f338f7fe700) from PID 66; stack trace: ***
+    @     0x7f3399eea420 (unknown)
+    @     0x7f339806300b gsignal
+    @     0x7f3398042859 abort
+    @     0x7f3398e663f2 _ZN5arrow4util8ArrowLogD2Ev.localalias
+    @     0x7f3398d0ad32 arrow::internal::InvalidValueOrDie()
+    @     0x7f339a6508bd vineyard::LocalIOAdaptor::LocalIOAdaptor()
+    @     0x7f339a650b11 vineyard::LocalIOAdaptor::Make()
+    @     0x7f339a6481b9 vineyard::IOFactory::CreateIOAdaptor()
+    @     0x7f338c5211a2 (unknown)
+    @     0x7f338c62ff6c _ZZN2gs19ArrowFragmentLoaderIlmE16loadVertexTablesERKSt6vectorISt10shared_ptrINS_6detail6VertexEESaIS6_EEiiENKUlvE1_clEv
+    @     0x7f338c630635 _ZZN8vineyard13sync_gs_errorIRZN2gs19ArrowFragmentLoaderIlmE16loadVertexTablesERKSt6vectorISt10shared_ptrINS1_6detail6VertexEESaIS8_EEiiEUlvE1_JEEENSt9result_ofIFNSt5decayIT_E4typeEDpNSG_IT0_E4typeEEE4typeERKN5grape8CommSpecEOSH_DpOSK_ENKUlvE0_clEv
+    @     0x7f338c63112b gs::ArrowFragmentLoader<>::loadVertexTables()
+    @     0x7f338c6332d4 _ZZN8vineyard13sync_gs_errorIRZN2gs19ArrowFragmentLoaderIlmE16LoadVertexTablesEvEUlvE0_JEEENSt9result_ofIFNSt5decayIT_E4typeEDpNS7_IT0_E4typeEEE4typeERKN5grape8CommSpecEOS8_DpOSB_ENKUlvE0_clEv
+    @     0x7f338c633992 gs::ArrowFragmentLoader<>::LoadVertexTables()
+    @     0x7f338c634e4a gs::ArrowFragmentLoader<>::LoadVertexEdgeTables()
+    @     0x7f338c6747cc gs::ArrowFragmentLoader<>::addVertices()
+    @     0x7f338c675815 gs::ArrowFragmentLoader<>::AddLabelsToGraphAsFragmentGroup()
+    @     0x7f338c525681 AddLabelsToGraph
+    @           0x47d617 gs::GrapeInstance::addLabelsToGraph()
+    @           0x491d22 gs::GrapeInstance::OnReceive()
+    @           0x519d50 gs::Dispatcher::processCmd()
+    @           0x51bea7 gs::Dispatcher::publisherLoop()
+    @     0x7f33a43aede0 execute_native_thread_routine
+    @     0x7f3399ede609 start_thread
+    @     0x7f339813f133 clone
+    @                0x0 (unknown)
+2022-10-26 17:57:53,930 [ERROR][coordinator:441]: Engine RunStep failed, code: UNAVAILABLE, details: Socket closed
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+2022-10-26 17:57:53,930 [ERROR][coordinator:441]: Engine RunStep failed, code: UNAVAILABLE, details: Socket closed
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 66 on node gs-engine-oijgfv-jtftn exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
