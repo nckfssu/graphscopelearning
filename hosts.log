@@ -1,0 +1,34 @@
+/Library/Frameworks/Python.framework/Versions/Current/bin/python3 /Users/lyl/Work/05_GraphScope/01_Projects/HelloGraphScope/LocalHdfsTest2.py
+2022-10-27 17:43:43,864 [INFO][session:1512]: Creating default session ...
+2022-10-27 17:43:43,864 [INFO][session:689]: Initializing graphscope session with parameters: {'addr': None, 'mode': 'eager', 'cluster_type': 'hosts', 'num_workers': 1, 'preemptive': True, 'k8s_namespace': None, 'k8s_service_type': 'NodePort', 'k8s_gs_image': 'registry.cn-hongkong.aliyuncs.com/graphscope/graphscope:0.17.0', 'k8s_etcd_image': 'quay.io/coreos/etcd:v3.4.13', 'k8s_image_pull_policy': 'IfNotPresent', 'k8s_image_pull_secrets': [], 'k8s_coordinator_cpu': 1.5, 'k8s_coordinator_mem': '2Gi', 'etcd_addrs': None, 'etcd_listening_client_port': 2379, 'etcd_listening_peer_port': 2380, 'k8s_etcd_num_pods': 1, 'k8s_etcd_cpu': 1.0, 'k8s_etcd_mem': '512Mi', 'k8s_vineyard_daemonset': 'none', 'k8s_vineyard_cpu': 0.2, 'k8s_vineyard_mem': '512Mi', 'vineyard_shared_mem': '4Gi', 'k8s_engine_cpu': 0.2, 'k8s_engine_mem': '1Gi', 'k8s_mars_worker_cpu': 0.2, 'k8s_mars_worker_mem': '4Mi', 'k8s_mars_scheduler_cpu': 0.2, 'k8s_mars_scheduler_mem': '2Mi', 'k8s_coordinator_pod_node_selector': None, 'k8s_etcd_pod_node_selector': None, 'k8s_engine_pod_node_selector': None, 'with_mars': False, 'reconnect': False, 'k8s_volumes': {}, 'k8s_waiting_for_delete': False, 'timeout_seconds': 600, 'dangling_timeout_seconds': 600, 'mount_dataset': None, 'k8s_dataset_image': 'registry.cn-hongkong.aliyuncs.com/graphscope/dataset:0.17.0', 'hosts': ['localhost'], 'port': None, 'vineyard_socket': '', 'k8s_client_config': {}}
+2022-10-27 17:43:43,869 [INFO][cluster:134]: Initializing coordinator with command: /Library/Frameworks/Python.framework/Versions/3.9/bin/python3 -m gscoordinator --num_workers 1 --hosts localhost --log_level INFO --timeout_seconds 600 --port 44832 --cluster_type hosts --instance_id ividwl --etcd_listening_client_port 2379 --etcd_listening_peer_port 2380 --vineyard_shared_mem 4Gi
+2022-10-27 17:43:44,127 [INFO][cluster:198]: Coordinator service started successful, connecting to service...
+2022-10-27 17:43:45,811 [INFO][launcher:392]: Launch etcd with command: /Library/Frameworks/Python.framework/Versions/3.9/bin/etcd --data-dir /tmp/gs/ividwl --listen-peer-urls http://0.0.0.0:2380 --listen-client-urls http://0.0.0.0:2379 --advertise-client-urls http://MacBook-Pro.local:2379 --initial-cluster default=http://127.0.0.1:2380 --initial-advertise-peer-urls http://127.0.0.1:2380
+2022-10-27 17:43:45,817 [INFO][launcher:408]: Server is initializing etcd.
+2022-10-27 17:43:46,824 [INFO][launcher:420]: Etcd is ready, endpoint is localhost:2379
+2022-10-27 17:43:46,827 [INFO][launcher:467]: Launch vineyardd with command: /Library/Frameworks/Python.framework/Versions/3.9/bin/python3 -m vineyard --socket /tmp/vineyard.sock.1666863826.825305 --rpc_socket_port 9600 --size 4Gi -etcd_endpoint http://MacBook-Pro.local:2379 -etcd_prefix vineyard.gsa.1666863826.825305
+2022-10-27 17:43:46,831 [INFO][launcher:483]: Server is initializing vineyardd.
+2022-10-27 17:43:49,840 [INFO][launcher:505]: Vineyardd is ready, ipc socket is /tmp/vineyard.sock.1666863826.825305
+2022-10-27 17:43:51,635 [INFO][launcher:533]: Launch analytical engine with command: /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/graphscope.runtime/bin/grape_engine --host 0.0.0.0 --port 54690 --vineyard_shared_mem 4Gi -v 1 --vineyard_socket /tmp/vineyard.sock.1666863826.825305
+2022-10-27 17:43:51,640 [INFO][launcher:549]: Server is initializing analytical engine.
+I20221027 17:43:55.000000 1259656384 /Users/runner/work/GraphScope/GraphScope/analytical_engine/core/grape_instance.cc:87] Workers of grape-engine initialized.
+I20221027 17:43:55.000000 42160128 /Users/runner/work/GraphScope/GraphScope/analytical_engine/core/server/analytical_server.cc:43] Analytical server is listening on 0.0.0.0:54690
+2022-10-27 17:43:56,656 [INFO][launcher:566]: Analytical engine is ready, endpoint is localhost:54690
+2022-10-27 17:43:56,664 [INFO][coordinator:200]: Java initial class path set to: /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/graphscope.runtime/lib/grape-runtime-0.17.0-shaded.jar
+2022-10-27 17:43:56,670 [INFO][coordinator:1782]: Coordinator server listen at 0.0.0.0:44832
+2022-10-27 17:44:00,766 [INFO][rpc:69]: GraphScope coordinator service connected.
+I20221027 17:44:05.000000 42696704 /Users/runner/work/GraphScope/GraphScope/analytical_engine/core/grape_instance.cc:1206] Registering Graph, graph type: ARROW_PROPERTY, Type sigature: e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521, lib path: /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/graphscope.runtime/precompiled/builtin/e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521/libe33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521.dylib
+I20221027 17:44:05.000000 42696704 /Users/runner/work/GraphScope/GraphScope/analytical_engine/core/grape_instance.cc:144] Loading graph, graph name: graph_PN2qmWqB, graph type: ArrowFragment, type sig: e33529e80839a2064a804ce453c761a9483aa7ab775bcfddc1a1f9da63dcb521
+
+Loading empty graph:   0%|          | 0/10 [00:00<?, ?it/s]
+Loading empty graph: 100%|██████████| 10/10 [00:00<00:00, 28.28it/s]
+Loading empty graph: 100%|██████████| 10/10 [00:00<00:00, 28.23it/s]
+
+Loading vertex labeled field_of_study and:   0%|          | 0/10 [00:00<?, ?it/s]
+Loading vertex labeled field_of_study and: 100%|██████████| 10/10 [00:00<00:00, 28.76it/s]
+Loading vertex labeled field_of_study and: 100%|██████████| 10/10 [00:00<00:00, 28.73it/s]
+I20221027 17:44:12.000000 42696704 /Users/runner/work/GraphScope/GraphScope/analytical_engine/core/grape_instance.cc:201] Unloading Graph graph_PN2qmWqB
+Vertex label count is  1 .
+============ Session closed. ==========
+
+Process finished with exit code 0
